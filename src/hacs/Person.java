@@ -25,22 +25,22 @@ abstract public class Person {
 		courseList = new ClassCourseList();
 	}
 
-	abstract public CourseMenu CreateCourseMenu(Course theCourse, int theLevel);
+	abstract public CourseMenu createCourseMenu(Course theCourse, int theLevel);
 
 	public void showAddButton() {
-		theCourseMenu.ShowAddButtons();
+		theCourseMenu.showAddButtons();
 	}
 
 	public void showViewButtons() {
-		theCourseMenu.ShowViewButtons();
+		theCourseMenu.showViewButtons();
 	}
 
 	public void showComboxes() {
-		theCourseMenu.ShowComboxes();
+		theCourseMenu.showComboxes();
 	}
 
 	public void showRadios() {
-		theCourseMenu.ShowRadios();
+		theCourseMenu.showRadios();
 	}
 
 	public void show() {
@@ -52,7 +52,7 @@ abstract public class Person {
 	}
 
 	// show the assignment list
-	public boolean ShowMenu() {
+	public boolean showMenu() {
 		// create a iterator for the assignment list
 //    Iterator theIter=new ListIterator(CurrentCourse.AssList );
 		Iterator<Assignment> theIter = currentCourse.assignmentList.iterator();
@@ -65,11 +65,11 @@ abstract public class Person {
 		return false;
 	}
 
-	public ClassCourseList GetCourseList() {
+	public ClassCourseList getCourseList() {
 		return courseList;
 	}
 
-	public void AddCourse(Course theCourse) {
+	public void addCourse(Course theCourse) {
 		courseList.add(theCourse);
 	}
 }

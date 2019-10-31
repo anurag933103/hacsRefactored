@@ -28,7 +28,7 @@ public class Course {
 		this.assignCount = 0;
 	}
 
-	public void AddAssignment(Assignment newAss) {
+	public void addAssignment(Assignment newAss) {
 		assignmentList.add(newAss);
 	}
 

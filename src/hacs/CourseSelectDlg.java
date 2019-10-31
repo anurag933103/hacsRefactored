@@ -55,7 +55,7 @@ public class CourseSelectDlg extends JDialog {
 		okButton.setBounds(new Rectangle(78, 139, 79, 29));
 		okButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				OKButton_actionPerformed(e);
+				okButton_actionPerformed(e);
 			}
 		});
 		buttonLogout.setText("Logout");
@@ -80,7 +80,7 @@ public class CourseSelectDlg extends JDialog {
 	 * return the pointer pointing to the Course object return the Course Type
 	 */
 
-	public Course ShowDlg(ClassCourseList courseList) {
+	public Course showDlg(ClassCourseList courseList) {
 
 		theCourseList = courseList;
 		CourseIterator theIterator = new CourseIterator(theCourseList);
@@ -93,7 +93,7 @@ public class CourseSelectDlg extends JDialog {
 		return selectedCourse;
 	}
 
-	void OKButton_actionPerformed(ActionEvent e) {
+	void okButton_actionPerformed(ActionEvent e) {
 		selectedCourse = (Course) courseNameCom.getSelectedItem();
 		if (highLevelRadio.isSelected())
 			nCourseLevel = 0; // highlevel course: 0

@@ -20,15 +20,15 @@ public class LowLevelCourseMenu extends CourseMenu {
 	public LowLevelCourseMenu() {
 	}
 
-	void ShowMenu(Course theCourse) {
+	void showMenu(Course theCourse) {
 		setVisible(false);
 		;
 	}
 
-	void ShowAddButtons() {
+	void showAddButtons() {
 		assignmentAddButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AssignmentAddButton_actionPerformed(e);
+				assignmentAddButton_actionPerformed(e);
 			}
 		});
 		assignmentAddButton.setText("Add");
@@ -39,7 +39,7 @@ public class LowLevelCourseMenu extends CourseMenu {
 		this.getContentPane().add(optionAddButton, null);
 	}
 
-	void ShowRadios() {
+	void showRadios() {
 		assignmentRadiao.setText("Assignment");
 		assignmentRadiao.setBounds(new Rectangle(21, 55, 103, 26));
 		this.getContentPane().add(assignmentRadiao, null);
@@ -48,7 +48,7 @@ public class LowLevelCourseMenu extends CourseMenu {
 		this.getContentPane().add(optionRadio, null);
 	}
 
-	void ShowComboxes() {
+	void showComboxes() {
 		assignmentCombox.setBounds(new Rectangle(140, 57, 126, 22));
 		optionCombo.setBounds(new Rectangle(137, 127, 126, 22));
 		this.getContentPane().add(assignmentCombox, null);
@@ -56,12 +56,12 @@ public class LowLevelCourseMenu extends CourseMenu {
 		refresh();
 	}
 
-	void ShowViewButtons() {
+	void showViewButtons() {
 		assignmentViewButton.setText("View");
 		assignmentViewButton.setBounds(new Rectangle(290, 54, 79, 29));
 		assignmentViewButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AssignmentViewButton_actionPerformed(e);
+				assignmentViewButton_actionPerformed(e);
 			}
 		});
 		optionViewButton.setText("View");
@@ -70,7 +70,7 @@ public class LowLevelCourseMenu extends CourseMenu {
 		this.getContentPane().add(optionViewButton, null);
 	}
 
-	void ShowLabel() {
+	void showLabel() {
 		assignmentContentLable.setText("AssigmentContent");
 		assignmentContentLable.setBounds(new Rectangle(23, 186, 432, 99));
 		this.getContentPane().add(assignmentContentLable, null);

@@ -22,7 +22,7 @@ public class ClassCourseList extends ArrayList<Course> {
 
 	//// initialize the list by reading from the file.
 	@SuppressWarnings("resource")
-	void InitializeFromFile(String theFileName) {
+	void initializeFromFile(String theFileName) {
 		try {
 			BufferedReader file;
 			String strCourseName = null;

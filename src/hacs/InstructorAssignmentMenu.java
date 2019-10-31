@@ -59,21 +59,21 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 		buttonGrade.setBounds(new Rectangle(458, 199, 79, 29));
 		buttonGrade.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				buttonGrade_actionPerformed(e);
+				buttonGradeActionPerformed(e);
 			}
 		});
 		buttonReport.setText("Report");
 		buttonReport.setBounds(new Rectangle(365, 249, 79, 29));
 		buttonReport.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				buttonReport_actionPerformed(e);
+				buttonReportActionPerformed(e);
 			}
 		});
 		buttonClose.setText("Close");
 		buttonClose.setBounds(new Rectangle(86, 253, 79, 29));
 		buttonClose.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				buttonClose_actionPerformed(e);
+				buttonCloseActionPerformed(e);
 			}
 		});
 		combSolutionList.setBounds(new Rectangle(32, 204, 413, 22));
@@ -89,7 +89,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 		this.getContentPane().add(buttonReport, null);
 	}
 
-	public void ShowMenu(Assignment assignment, Person person) {
+	public void showMenu(Assignment assignment, Person person) {
 		theAssignment = assignment;
 		tbAssignmentName.setText(theAssignment.assignName);
 
@@ -101,7 +101,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 		;
 	}
 
-	void buttonClose_actionPerformed(ActionEvent e) {
+	void buttonCloseActionPerformed(ActionEvent e) {
 		theAssignment.assignName = tbAssignmentName.getText();
 		DateFormat tempDateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
 		try {
@@ -114,7 +114,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 		;
 	}
 
-	void buttonGrade_actionPerformed(ActionEvent e) {
+	void buttonGradeActionPerformed(ActionEvent e) {
 		Solution theSolution = (Solution) combSolutionList.getSelectedItem();
 		if (theSolution == null)
 			return;
@@ -123,7 +123,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 		refreshSolutionList();
 	}
 
-	void buttonReport_actionPerformed(ActionEvent e) {
+	void buttonReportActionPerformed(ActionEvent e) {
 		SolutionIterator iter = new SolutionIterator(theAssignment.theSolutionList);
 		while (iter.hasNext()) {
 			Solution asolution = (Solution) iter.next();
