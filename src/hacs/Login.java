@@ -55,14 +55,14 @@ public class Login extends JDialog {
 		loginButton.setBounds(new Rectangle(31, 212, 85, 28));
 		loginButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				loginButton_actionPerformed(e);
+				loginButtonActionPerformed(e);
 			}
 		});
 		buttonExit.setText("Exit");
 		buttonExit.setBounds(new Rectangle(180, 211, 97, 28));
 		buttonExit.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				buttonExit_actionPerformed(e);
+				buttonExitActionPerformed(e);
 			}
 		});
 		userNameText.setBounds(new Rectangle(119, 52, 144, 22));
@@ -84,7 +84,7 @@ public class Login extends JDialog {
 		buttonGroup1.add(instructorRadio);
 	}
 
-	void loginButton_actionPerformed(ActionEvent e) {
+	void loginButtonActionPerformed(ActionEvent e) {
 		BufferedReader file;
 		mBExit = false;
 		System.out.println("login clicked");
@@ -103,8 +103,8 @@ public class Login extends JDialog {
 			String LoginName = null;
 			String aline = null, UserName = null, Password = null;
 			while ((aline = file.readLine()) != null) {
-				UserName = GetUserName(aline);
-				Password = GetPassword(aline);
+				UserName = getUserName(aline);
+				Password = getPassword(aline);
 				if (UserName.compareTo(userBox) == 0 && Password.compareTo(PasswordBox) == 0)
 					LoginName = UserName;
 			}
@@ -121,7 +121,7 @@ public class Login extends JDialog {
 	/*
 	 * get the user name from aline UserName:Password
 	 */
-	private String GetUserName(String aline) {
+	private String getUserName(String aline) {
 		int Sep = aline.lastIndexOf(':');
 		return aline.substring(0, Sep);
 	}
@@ -129,18 +129,18 @@ public class Login extends JDialog {
 	/*
 	 * get the password from aline UserName:Password
 	 */
-	private String GetPassword(String aline) {
+	private String getPassword(String aline) {
 		int Sep = aline.lastIndexOf(':');
 		return aline.substring(Sep + 1, aline.length());
 	}
 
 	/* after login get the UserName of the login interface */
-	public String GetUserName() {
+	public String getUserName() {
 		return userBox;
 	}
 
 	/* after login get the userType of the login interface */
-	public USER_TYPE GetUserType() {
+	public USER_TYPE getUserType() {
 		return userType;
 	}
 
@@ -148,7 +148,7 @@ public class Login extends JDialog {
 		return mBExit;
 	}
 
-	void buttonExit_actionPerformed(ActionEvent e) {
+	void buttonExitActionPerformed(ActionEvent e) {
 		mBExit = true;
 		setVisible(false);
 	}

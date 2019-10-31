@@ -28,8 +28,8 @@ public class Facade {
 		login.setModal(true);
 		login.setVisible(true);
 		;
-		userinfoItem.strUserName = login.GetUserName();
-		userinfoItem.userType = login.GetUserType();
+		userinfoItem.strUserName = login.getUserName();
+		userinfoItem.userType = login.getUserType();
 		return login.isExit();
 	}
 
@@ -82,7 +82,7 @@ public class Facade {
 
 	void gradeSolution(Solution theSolution) {
 		SolutionMenu solutionMenu = new SolutionMenu();
-		solutionMenu.ShowMenu(theSolution);
+		solutionMenu.showMenu(theSolution);
 	}
 
 	void reportSolutions(Assignment theAssignment) {

@@ -72,14 +72,14 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 		bSubmit.setBounds(new Rectangle(476, 124, 79, 29));
 		bSubmit.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				bSubmit_actionPerformed(e);
+				bSubmitActionPerformed(e);
 			}
 		});
 		bCancel.setText("Cancel");
 		bCancel.setBounds(new Rectangle(475, 164, 79, 29));
 		bCancel.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				bCancel_actionPerformed(e);
+				bCancelActionPerformed(e);
 			}
 		});
 		this.getContentPane().add(jLabel1, null);
@@ -130,12 +130,12 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 		}
 	}
 
-	void bSubmit_actionPerformed(ActionEvent e) {
+	void bSubmitActionPerformed(ActionEvent e) {
 		boolSubmit = true;
 		setVisible(false);
 	}
 
-	void bCancel_actionPerformed(ActionEvent e) {
+	void bCancelActionPerformed(ActionEvent e) {
 		boolSubmit = false;
 		setVisible(false);
 	}

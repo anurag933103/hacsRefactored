@@ -46,7 +46,7 @@ public class Reminder extends JDialog {
 		buttonOK.setBounds(new Rectangle(149, 308, 67, 37));
 		buttonOK.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				buttonOK_actionPerformed(e);
+				buttonOkActionPerformed(e);
 			}
 		});
 		this.getContentPane().add(jLabel1, null);
@@ -62,7 +62,7 @@ public class Reminder extends JDialog {
 		setVisible(true);
 	}
 
-	void buttonOK_actionPerformed(ActionEvent e) {
+	void buttonOkActionPerformed(ActionEvent e) {
 		setVisible(false);
 	}
 }
