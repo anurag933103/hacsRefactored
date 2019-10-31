@@ -95,7 +95,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 
 		DateFormat theDateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
 		tbDueDate.setText(theDateFormat.format(theAssignment.dueDate));
-		tbSuggestedSolution.setText(theAssignment.SuggestSolution.SolutionFileName);
+		tbSuggestedSolution.setText(theAssignment.suggestSolution.SolutionFileName);
 		refreshSolutionList();
 		setVisible(true);
 		;
@@ -109,7 +109,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 		} catch (Exception ee) {
 		}
 		;
-		theAssignment.SuggestSolution.SolutionFileName = tbSuggestedSolution.getText();
+		theAssignment.suggestSolution.SolutionFileName = tbSuggestedSolution.getText();
 		setVisible(false);
 		;
 	}

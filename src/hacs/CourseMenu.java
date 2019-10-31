@@ -21,15 +21,15 @@ abstract public class CourseMenu extends JDialog {
 	Course theCourse;
 	boolean bLogout = true;
 
-	JRadioButton AssignmentRadiao = new JRadioButton();
-	JComboBox<Assignment> AssignmentCombox = new JComboBox<Assignment>();
-	JButton AssignmentViewButton = new JButton();
-	JButton AssignmentAddButton = new JButton();
-	JRadioButton OptionRadio = new JRadioButton();
-	JLabel AssignmentContentLable = new JLabel();
-	JComboBox<Rectangle> OptionCombo = new JComboBox<Rectangle>();
-	JButton OptionViewButton = new JButton();
-	JButton OptionAddButton = new JButton();
+	JRadioButton assignmentRadiao = new JRadioButton();
+	JComboBox<Assignment> assignmentCombox = new JComboBox<Assignment>();
+	JButton assignmentViewButton = new JButton();
+	JButton assignmentAddButton = new JButton();
+	JRadioButton optionRadio = new JRadioButton();
+	JLabel assignmentContentLable = new JLabel();
+	JComboBox<Rectangle> optionCombo = new JComboBox<Rectangle>();
+	JButton optionViewButton = new JButton();
+	JButton optionAddButton = new JButton();
 	JButton buttonChangeCourse = new JButton();
 	JButton buttonLogout = new JButton();
 
@@ -93,15 +93,15 @@ abstract public class CourseMenu extends JDialog {
 	}
 
 	void AssignmentViewButton_actionPerformed(ActionEvent e) {
-		Assignment theAss = (Assignment) AssignmentCombox.getSelectedItem();
+		Assignment theAss = (Assignment) assignmentCombox.getSelectedItem();
 		Hacs.theFacade.ViewAssignment(theAss);
 	}
 
 	void refresh() {
-		AssignmentCombox.removeAllItems();
+		assignmentCombox.removeAllItems();
 		Iterator<Assignment> Iter = theCourse.assignmentList.iterator();
 		while (Iter.hasNext()) {
-			AssignmentCombox.addItem(Iter.next());
+			assignmentCombox.addItem(Iter.next());
 		}
 	}
 

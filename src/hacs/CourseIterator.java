@@ -15,7 +15,7 @@ import java.util.Iterator;
 
 public class CourseIterator implements Iterator<Course> {
 	ClassCourseList theCourseList;
-	int CurrentCourseNumber = -1;
+	int currentCourseNumber = -1;
 
 	public CourseIterator() {
 	}
@@ -25,7 +25,7 @@ public class CourseIterator implements Iterator<Course> {
 	}
 
 	public boolean hasNext() {
-		if (CurrentCourseNumber >= theCourseList.size() - 1)
+		if (currentCourseNumber >= theCourseList.size() - 1)
 			return false;
 		else
 			return true;
@@ -33,15 +33,15 @@ public class CourseIterator implements Iterator<Course> {
 
 	public Course next() {
 		if (hasNext() == true) {
-			CurrentCourseNumber++;
-			return theCourseList.get(CurrentCourseNumber);
+			currentCourseNumber++;
+			return theCourseList.get(currentCourseNumber);
 		} else {
 			return null;
 		}
 	}
 
 	public void remove() {
-		theCourseList.remove(CurrentCourseNumber);
+		theCourseList.remove(currentCourseNumber);
 	}
 
 // the next Course that fits the given CourseName

@@ -19,9 +19,9 @@ public class Assignment {
 	protected String assignName;
 	protected String strAssignmentFilename;
 	protected Date dueDate = new Date();
-	protected String AssSpec;
+	protected String assignSpec;
 	protected SolutionList theSolutionList = new SolutionList();
-	protected Solution SuggestSolution = new Solution();
+	protected Solution suggestSolution = new Solution();
 
 	public Assignment() {
 	}
@@ -31,7 +31,7 @@ public class Assignment {
 	}
 
 	public void SetAssSpec(String theSpec) {
-		this.AssSpec = theSpec;
+		this.assignSpec = theSpec;
 	}
 
 	public boolean IsOverDue() {
@@ -68,7 +68,7 @@ public class Assignment {
 	}
 
 	public Solution getSugSolution() {
-		return SuggestSolution;
+		return suggestSolution;
 	}
 
 	public SolutionIterator GetSolutionIterator() {
