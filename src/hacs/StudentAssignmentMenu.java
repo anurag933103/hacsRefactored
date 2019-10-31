@@ -103,19 +103,19 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 	public void ShowMenu(Assignment assignment, Person thePerson) {
 		theAssignment = assignment;
 		SolutionIterator theIter = theAssignment.GetSolutionIterator();
-		theSolution = (Solution) theIter.next(thePerson.UserName);
+		theSolution = (Solution) theIter.next(thePerson.userName);
 		if (theSolution == null) {
 			tbSolution.setText("");
 			lGrade.setText("-1");
 		} else {
-			tbSolution.setText(theSolution.SolutionFileName);
+			tbSolution.setText(theSolution.solutionFileName);
 			lGrade.setText(theSolution.getGradeString());
 
 		}
 
 		lAssignmentName.setText(theAssignment.assignName);
 		lDueDate.setText(theAssignment.dueDate.toString());
-		lSuggestedSolution.setText(theAssignment.suggestSolution.SolutionFileName);
+		lSuggestedSolution.setText(theAssignment.suggestSolution.solutionFileName);
 
 		setVisible(true);
 
@@ -124,8 +124,8 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 				theSolution = new Solution();
 				theAssignment.AddSolution(theSolution);
 			}
-			theSolution.theAuthor = thePerson.UserName;
-			theSolution.SolutionFileName = tbSolution.getText();
+			theSolution.theAuthor = thePerson.userName;
+			theSolution.solutionFileName = tbSolution.getText();
 			theSolution.theSubmitData = new Date();
 		}
 	}

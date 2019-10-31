@@ -20,7 +20,7 @@ import java.text.DateFormat;
 public class InstructorAssignmentMenu extends AssignmentMenu {
 	private Solution theSolution;
 	private Assignment theAssignment;
-	JComboBox<Solution> CombSolutionList = new JComboBox<Solution>();
+	JComboBox<Solution> combSolutionList = new JComboBox<Solution>();
 
 	JTextField tbAssignmentName = new JTextField();
 	JTextField tbDueDate = new JTextField();
@@ -76,7 +76,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 				buttonClose_actionPerformed(e);
 			}
 		});
-		CombSolutionList.setBounds(new Rectangle(32, 204, 413, 22));
+		combSolutionList.setBounds(new Rectangle(32, 204, 413, 22));
 		this.getContentPane().add(jLabel1, null);
 		this.getContentPane().add(tbAssignmentName, null);
 		this.getContentPane().add(jLabel2, null);
@@ -84,7 +84,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 		this.getContentPane().add(jLabel3, null);
 		this.getContentPane().add(tbSuggestedSolution, null);
 		this.getContentPane().add(buttonClose, null);
-		this.getContentPane().add(CombSolutionList, null);
+		this.getContentPane().add(combSolutionList, null);
 		this.getContentPane().add(buttonGrade, null);
 		this.getContentPane().add(buttonReport, null);
 	}
@@ -95,7 +95,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 
 		DateFormat theDateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
 		tbDueDate.setText(theDateFormat.format(theAssignment.dueDate));
-		tbSuggestedSolution.setText(theAssignment.suggestSolution.SolutionFileName);
+		tbSuggestedSolution.setText(theAssignment.suggestSolution.solutionFileName);
 		refreshSolutionList();
 		setVisible(true);
 		;
@@ -109,13 +109,13 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 		} catch (Exception ee) {
 		}
 		;
-		theAssignment.suggestSolution.SolutionFileName = tbSuggestedSolution.getText();
+		theAssignment.suggestSolution.solutionFileName = tbSuggestedSolution.getText();
 		setVisible(false);
 		;
 	}
 
 	void buttonGrade_actionPerformed(ActionEvent e) {
-		Solution theSolution = (Solution) CombSolutionList.getSelectedItem();
+		Solution theSolution = (Solution) combSolutionList.getSelectedItem();
 		if (theSolution == null)
 			return;
 		SolutionGradingDlg dlg = new SolutionGradingDlg();
@@ -133,11 +133,11 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 	}
 
 	private void refreshSolutionList() {
-		CombSolutionList.removeAllItems();
+		combSolutionList.removeAllItems();
 		SolutionIterator SolIter = new SolutionIterator(theAssignment.theSolutionList);
 		while (SolIter.hasNext()) {
 			theSolution = (Solution) SolIter.next();
-			CombSolutionList.addItem(theSolution);
+			combSolutionList.addItem(theSolution);
 		}
 	}
 }

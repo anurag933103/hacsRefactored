@@ -18,5 +18,5 @@ public class UserInfoItem {
 	}
 
 	String strUserName;
-	USER_TYPE UserType; // 0 : Student, 1: Instructor
+	USER_TYPE userType; // 0 : Student, 1: Instructor
 }

@@ -17,7 +17,7 @@ import java.awt.event.*;
 
 @SuppressWarnings("serial")
 public class Reminder extends JDialog {
-	ClassCourseList CourseList;
+	ClassCourseList courseList;
 	JLabel jLabel1 = new JLabel();
 	JLabel jLabel2 = new JLabel();
 	java.awt.List listUpcoming = new java.awt.List();

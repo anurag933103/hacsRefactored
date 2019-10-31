@@ -14,7 +14,7 @@ import java.io.*;
  */
 
 public class Facade {
-	public int UserType;
+	public int userType;
 	private Course theSelecteCourse = null;
 	private int nCourseLevel = 0;
 	ClassCourseList theCourseList;
@@ -29,7 +29,7 @@ public class Facade {
 		login.setVisible(true);
 		;
 		userinfoItem.strUserName = login.GetUserName();
-		userinfoItem.UserType = login.GetUserType();
+		userinfoItem.userType = login.GetUserType();
 		return login.isExit();
 	}
 
@@ -109,14 +109,14 @@ public class Facade {
 	}
 
 	void CreateUser(UserInfoItem userinfoitem) {
-		if (userinfoitem.UserType == UserInfoItem.USER_TYPE.Student) /// student
+		if (userinfoitem.userType == UserInfoItem.USER_TYPE.Student) /// student
 		{
 			thePerson = new Student();
 		} else /// instructor
 		{
 			thePerson = new Instructor();
 		}
-		thePerson.UserName = userinfoitem.strUserName;
+		thePerson.userName = userinfoitem.strUserName;
 	}
 
 	/*
@@ -141,7 +141,7 @@ public class Facade {
 			{
 				strUserName = GetUserName(aline);
 				strCourseName = GetCourseName(aline);
-				if (strUserName.compareTo(thePerson.UserName) == 0) /// the UserName mateches
+				if (strUserName.compareTo(thePerson.userName) == 0) /// the UserName mateches
 				{
 					theSelecteCourse = FindCourseByCourseName(strCourseName);
 					if (theSelecteCourse != null) /// Find the Course in the CourseList--->attach
@@ -179,8 +179,8 @@ public class Facade {
 	 */
 	public boolean SelectCourse() {
 		CourseSelectDlg theDlg = new CourseSelectDlg();
-		theSelecteCourse = theDlg.ShowDlg(thePerson.CourseList);
-		thePerson.CurrentCourse = theSelecteCourse;
+		theSelecteCourse = theDlg.ShowDlg(thePerson.courseList);
+		thePerson.currentCourse = theSelecteCourse;
 		nCourseLevel = theDlg.nCourseLevel;
 		return theDlg.isLogout();
 	}

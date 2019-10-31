@@ -15,14 +15,14 @@ import java.util.*;
 
 abstract public class Person {
 	int type = 0; // type=0 : student, type=1 instructor
-	String UserName;
-	ClassCourseList CourseList;
+	String userName;
+	ClassCourseList courseList;
 	CourseMenu theCourseMenu;
-	Course CurrentCourse;
-	Assignment CurrentAssignment;
+	Course currentCourse;
+	Assignment currentAssignment;
 
 	public Person() {
-		CourseList = new ClassCourseList();
+		courseList = new ClassCourseList();
 	}
 
 	abstract public CourseMenu CreateCourseMenu(Course theCourse, int theLevel);
@@ -55,8 +55,8 @@ abstract public class Person {
 	public boolean ShowMenu() {
 		// create a iterator for the assignment list
 //    Iterator theIter=new ListIterator(CurrentCourse.AssList );
-		Iterator<Assignment> theIter = CurrentCourse.assignmentList.iterator();
-		theCourseMenu.theCourse = CurrentCourse;
+		Iterator<Assignment> theIter = currentCourse.assignmentList.iterator();
+		theCourseMenu.theCourse = currentCourse;
 		Assignment theAssignment;
 		while (theIter.hasNext()) {
 			theAssignment = theIter.next();
@@ -66,10 +66,10 @@ abstract public class Person {
 	}
 
 	public ClassCourseList GetCourseList() {
-		return CourseList;
+		return courseList;
 	}
 
 	public void AddCourse(Course theCourse) {
-		CourseList.add(theCourse);
+		courseList.add(theCourse);
 	}
 }
