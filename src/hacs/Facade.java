@@ -107,7 +107,7 @@ public class Facade {
 	}
 
 	void createUser(UserInfoItem userinfoitem) {
-		if (userinfoitem.userType == UserInfoItem.USER_TYPE.Student) /// student
+		if (userinfoitem.userType == UserInfoItem.UserType.STUDENT) /// student
 		{
 			thePerson = new Student();
 		} else /// instructor
@@ -121,8 +121,9 @@ public class Facade {
 	 * create a course list and intitialize it with the file CourseInfo.txt
 	 */
 	void createCourseList() {
+		String courseFile = "CourseInfo.txt";
 		theCourseList = new ClassCourseList();
-		theCourseList.initializeFromFile("CourseInfo.txt");
+		theCourseList.initializeFromFile(courseFile);
 	}
 
 	/*
@@ -132,8 +133,9 @@ public class Facade {
 	 */
 	void attachCourseToUser() {
 		BufferedReader file;
+		String courseUsers = "UserCourse.txt";
 		try {
-			file = new BufferedReader(new FileReader("UserCourse.txt"));
+			file = new BufferedReader(new FileReader(courseUsers));
 			String aline, strUserName, strCourseName;
 			while ((aline = file.readLine()) != null) // not the EOF
 			{

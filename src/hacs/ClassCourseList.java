@@ -20,13 +20,14 @@ public class ClassCourseList extends ArrayList<Course> {
 	public ClassCourseList() {
 	}
 
+	String courseFile = "CourseInfo.txt";
 	//// initialize the list by reading from the file.
 	@SuppressWarnings("resource")
 	void initializeFromFile(String theFileName) {
 		try {
 			BufferedReader file;
 			String strCourseName = null;
-			file = new BufferedReader(new FileReader("CourseInfo.txt"));
+			file = new BufferedReader(new FileReader(courseFile));
 			while ((strCourseName = file.readLine()) != null) {
 				Course theCourse;
 				theCourse = new Course(strCourseName, 0);
