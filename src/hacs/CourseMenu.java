@@ -23,7 +23,7 @@ abstract public class CourseMenu extends JDialog
   boolean bLogout=true;
 
   JRadioButton AssignmentRadiao = new JRadioButton();
-  JComboBox AssignmentCombox = new JComboBox();
+  JComboBox<Assignment> AssignmentCombox = new JComboBox<Assignment>();
   JButton AssignmentViewButton = new JButton();
   JButton AssignmentAddButton = new JButton();
   JRadioButton OptionRadio = new JRadioButton();
@@ -103,7 +103,7 @@ abstract public class CourseMenu extends JDialog
   void refresh()
   {
     AssignmentCombox.removeAllItems() ;
-    Iterator Iter=theCourse.assignmentList.iterator() ;
+    Iterator<Assignment> Iter=theCourse.assignmentList.iterator() ;
     while(Iter.hasNext() )
     {
       AssignmentCombox.addItem(Iter.next() );
