@@ -19,6 +19,7 @@ import java.io.*;
  * @version 3.0
  */
 
+@SuppressWarnings("serial")
 public class Login extends JDialog {
 
 	boolean m_bExit = false;
@@ -108,7 +109,8 @@ public class Login extends JDialog {
 					LoginName = UserName;
 			}
 			if (LoginName != null) {
-				this.hide();
+				this.setVisible(false);
+				;
 			}
 		} catch (Exception ee) {
 			;

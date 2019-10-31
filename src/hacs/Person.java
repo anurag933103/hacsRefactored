@@ -44,7 +44,8 @@ abstract public class Person {
 	}
 
 	public void show() {
-		theCourseMenu.show();
+		theCourseMenu.setVisible(true);
+		;
 	}
 
 	public boolean ifLogout() {
@@ -59,7 +60,7 @@ abstract public class Person {
 		theCourseMenu.theCourse = CurrentCourse;
 		Assignment theAssignment;
 		while (theIter.hasNext()) {
-			theAssignment =theIter.next();
+			theAssignment = theIter.next();
 			theCourseMenu.AssignmentCombox.addItem(theAssignment);
 		}
 		return false;

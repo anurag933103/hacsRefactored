@@ -13,61 +13,48 @@ import java.util.Iterator;
  * @version 3.0
  */
 
-public class CourseIterator implements Iterator<Course>
-{
-  ClassCourseList theCourseList;
-  int CurrentCourseNumber=-1;
+public class CourseIterator implements Iterator<Course> {
+	ClassCourseList theCourseList;
+	int CurrentCourseNumber = -1;
 
+	public CourseIterator() {
+	}
 
-  public CourseIterator()
-  {
-  }
+	public CourseIterator(ClassCourseList courseList) {
+		theCourseList = courseList;
+	}
 
-  public CourseIterator(ClassCourseList courseList)
-  {
-    theCourseList=courseList;
-  }
+	public boolean hasNext() {
+		if (CurrentCourseNumber >= theCourseList.size() - 1)
+			return false;
+		else
+			return true;
+	}
 
-  public boolean hasNext()
-  {
-    if (CurrentCourseNumber>=theCourseList.size()-1)
-      return false;
-    else
-      return true;
-  }
+	public Course next() {
+		if (hasNext() == true) {
+			CurrentCourseNumber++;
+			return theCourseList.get(CurrentCourseNumber);
+		} else {
+			return null;
+		}
+	}
 
-  public Course next()
-  {
-    if (hasNext()==true)
-    {
-      CurrentCourseNumber ++;
-      return theCourseList.get(CurrentCourseNumber);
-    }
-    else
-    {
-      return null;
-    }
-  }
-  public void remove()
-  {
-    theCourseList.remove(CurrentCourseNumber);
-  }
+	public void remove() {
+		theCourseList.remove(CurrentCourseNumber);
+	}
 
 // the next Course that fits the given CourseName
-  public Object next(String CourseName)
-  {
-    Course theCourse;
-    theCourse=(Course)next();
-    while(theCourse!=null)
-    {
-      if(CourseName.compareTo(theCourse.toString())==0)
-      {
-        return theCourse;
-      }
-      theCourse=(Course)next();
-    }
-    return null;
-  }
-
+	public Object next(String CourseName) {
+		Course theCourse;
+		theCourse = (Course) next();
+		while (theCourse != null) {
+			if (CourseName.compareTo(theCourse.toString()) == 0) {
+				return theCourse;
+			}
+			theCourse = (Course) next();
+		}
+		return null;
+	}
 
 }

@@ -21,7 +21,7 @@ public class ListIterator implements Iterator<Object> {
 	}
 
 	public ListIterator(ArrayList<Object> list) {
-		theList = list;
+		this.theList = list;
 	}
 
 	public boolean hasNext() {
