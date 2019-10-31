@@ -27,7 +27,7 @@ abstract public class CourseMenu extends JDialog {
 	JButton AssignmentAddButton = new JButton();
 	JRadioButton OptionRadio = new JRadioButton();
 	JLabel AssignmentContentLable = new JLabel();
-	JComboBox OptionCombo = new JComboBox();
+	JComboBox<Rectangle> OptionCombo = new JComboBox<Rectangle>();
 	JButton OptionViewButton = new JButton();
 	JButton OptionAddButton = new JButton();
 	JButton buttonChangeCourse = new JButton();

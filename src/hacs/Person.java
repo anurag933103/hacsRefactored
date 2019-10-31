@@ -45,7 +45,6 @@ abstract public class Person {
 
 	public void show() {
 		theCourseMenu.setVisible(true);
-		;
 	}
 
 	public boolean ifLogout() {

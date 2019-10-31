@@ -16,9 +16,9 @@ import java.text.DateFormat;
 
 public class Assignment {
 
-	protected String AssName;
+	protected String assignName;
 	protected String strAssignmentFilename;
-	protected Date DueDate = new Date();
+	protected Date dueDate = new Date();
 	protected String AssSpec;
 	protected SolutionList theSolutionList = new SolutionList();
 	protected Solution SuggestSolution = new Solution();
@@ -27,7 +27,7 @@ public class Assignment {
 	}
 
 	public void SetDueDate(Date theDueDate) {
-		this.DueDate = theDueDate;
+		this.dueDate = theDueDate;
 	}
 
 	public void SetAssSpec(String theSpec) {
@@ -36,7 +36,7 @@ public class Assignment {
 
 	public boolean IsOverDue() {
 		Date today = new Date();
-		if (today.after(this.DueDate)) {
+		if (today.after(this.dueDate)) {
 			return true;
 		} else {
 			return false;
@@ -77,12 +77,12 @@ public class Assignment {
 	}
 
 	public String toString() {
-		return AssName;
+		return assignName;
 	}
 
 	public String getDueDateString() {
 		DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
-		return dateFormat.format(DueDate);
+		return dateFormat.format(dueDate);
 	}
 
 	public void accept(NodeVisitor visitor) {

@@ -3,7 +3,6 @@ package hacs;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
 import java.text.DateFormat;
 
 /**
@@ -19,10 +18,9 @@ import java.text.DateFormat;
 
 @SuppressWarnings("serial")
 public class InstructorAssignmentMenu extends AssignmentMenu {
-	private boolean bSubmit = false;
 	private Solution theSolution;
 	private Assignment theAssignment;
-	JComboBox CombSolutionList = new JComboBox();
+	JComboBox<Solution> CombSolutionList = new JComboBox<Solution>();
 
 	JTextField tbAssignmentName = new JTextField();
 	JTextField tbDueDate = new JTextField();
@@ -93,11 +91,10 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 
 	public void ShowMenu(Assignment assignment, Person person) {
 		theAssignment = assignment;
-		Solution theSolution;
-		tbAssignmentName.setText(theAssignment.AssName);
+		tbAssignmentName.setText(theAssignment.assignName);
 
 		DateFormat theDateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
-		tbDueDate.setText(theDateFormat.format(theAssignment.DueDate));
+		tbDueDate.setText(theDateFormat.format(theAssignment.dueDate));
 		tbSuggestedSolution.setText(theAssignment.SuggestSolution.SolutionFileName);
 		refreshSolutionList();
 		setVisible(true);
@@ -105,10 +102,10 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 	}
 
 	void buttonClose_actionPerformed(ActionEvent e) {
-		theAssignment.AssName = tbAssignmentName.getText();
+		theAssignment.assignName = tbAssignmentName.getText();
 		DateFormat tempDateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
 		try {
-			theAssignment.DueDate = tempDateFormat.parse(tbDueDate.getText());
+			theAssignment.dueDate = tempDateFormat.parse(tbDueDate.getText());
 		} catch (Exception ee) {
 		}
 		;
