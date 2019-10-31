@@ -37,8 +37,7 @@ public class Assignment {
   }
 
   public boolean IsOverDue(){
-    Date today;
-    today = new Date();
+    Date today= new Date();
     if (today.after(this.DueDate)) {
       return true;
     }

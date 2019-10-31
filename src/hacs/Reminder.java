@@ -17,6 +17,7 @@ import java.util.*;
  * @version 3.0
  */
 
+@SuppressWarnings("serial")
 public class Reminder extends JDialog {
 	ClassCourseList CourseList;
 	JLabel jLabel1 = new JLabel();

@@ -17,6 +17,7 @@ import java.util.Iterator;
  * @version 3.0
  */
 
+@SuppressWarnings("serial")
 abstract public class CourseMenu extends JDialog
 {
   Course theCourse;
@@ -113,13 +114,13 @@ abstract public class CourseMenu extends JDialog
   void buttonChangeCourse_actionPerformed(ActionEvent e)
   {
     bLogout=false;
-    hide();
+    setVisible(false);
   }
 
   void buttonLogout_actionPerformed(ActionEvent e)
   {
     bLogout=true;
-    hide();
+    setVisible(false);;
   }
   boolean ifLogout()
   {

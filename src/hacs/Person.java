@@ -55,11 +55,11 @@ abstract public class Person {
 	public boolean ShowMenu() {
 		// create a iterator for the assignment list
 //    Iterator theIter=new ListIterator(CurrentCourse.AssList );
-		Iterator theIter = CurrentCourse.assignmentList.iterator();
+		Iterator<Assignment> theIter = CurrentCourse.assignmentList.iterator();
 		theCourseMenu.theCourse = CurrentCourse;
 		Assignment theAssignment;
 		while (theIter.hasNext()) {
-			theAssignment = (Assignment) theIter.next();
+			theAssignment =theIter.next();
 			theCourseMenu.AssignmentCombox.addItem(theAssignment);
 		}
 		return false;

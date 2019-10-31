@@ -21,6 +21,7 @@ public class ClassCourseList extends ArrayList<Course> {
 	}
 
 	//// initialize the list by reading from the file.
+	@SuppressWarnings("resource")
 	void InitializeFromFile(String theFileName) {
 		try {
 			BufferedReader file;

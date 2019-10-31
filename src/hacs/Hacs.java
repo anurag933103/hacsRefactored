@@ -7,8 +7,8 @@ package hacs;
  * @version 1.0
  * @author mjfindler
  * @version 2.0
- * @author amishr57
- * @version 3.0
+ * 
+ * Update to Java 8
  */
 
 public class Hacs {

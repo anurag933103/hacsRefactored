@@ -13,6 +13,7 @@ import java.util.ArrayList;
  * @version 3.0
  */
 
+@SuppressWarnings("serial")
 public class SolutionList extends ArrayList<Solution> {
 
 	public SolutionList() {

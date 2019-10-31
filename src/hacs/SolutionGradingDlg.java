@@ -15,6 +15,7 @@ import java.awt.event.*;
  * @version 3.0
  */
 
+@SuppressWarnings("serial")
 public class SolutionGradingDlg extends JDialog {
 	Solution theSolution;
 	JLabel jLabel1 = new JLabel();

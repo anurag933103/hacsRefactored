@@ -15,6 +15,7 @@ import java.awt.event.*;
  * @version 3.0
  */
 
+@SuppressWarnings("serial")
 public class CourseSelectDlg extends JDialog {
 	// 0 HighLevel presentation 1 LowLevel Experiment
 	ClassCourseList theCourseList;
@@ -88,7 +89,7 @@ public class CourseSelectDlg extends JDialog {
 		{
 			CourseNameCom.addItem(theCourse);
 		}
-		show();
+		setVisible(true);
 		return SelectedCourse;
 	}
 
@@ -98,7 +99,7 @@ public class CourseSelectDlg extends JDialog {
 			nCourseLevel = 0; // highlevel course: 0
 		else
 			nCourseLevel = 1; // lowlevel course: 1
-		hide();
+		setVisible(false);
 	}
 
 	public boolean isLogout() {
@@ -107,6 +108,6 @@ public class CourseSelectDlg extends JDialog {
 
 	void buttonLogout_actionPerformed(ActionEvent e) {
 		m_bLogout = true;
-		hide();
+		setVisible(false);
 	}
 }

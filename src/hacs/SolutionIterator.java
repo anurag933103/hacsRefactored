@@ -13,7 +13,7 @@ import java.util.Iterator;
  * @version 3.0
  */
 
-public class SolutionIterator implements Iterator
+public class SolutionIterator implements Iterator<Solution>
 {
   SolutionList solutionlist;
 
@@ -44,7 +44,7 @@ public class SolutionIterator implements Iterator
       return true;
 //    throw new java.lang.UnsupportedOperationException("Method hasNext() not yet implemented.");
   }
-  public Object next()
+  public Solution next()
   {
     /**@todo: Implement this java.util.Iterator method*/
     if (hasNext()==true)

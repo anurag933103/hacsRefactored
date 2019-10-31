@@ -17,6 +17,7 @@ import java.util.*;
  * @version 3.0
  */
 
+@SuppressWarnings("serial")
 public class StudentAssignmentMenu extends AssignmentMenu {
 
 ////  class AssignmentMenu

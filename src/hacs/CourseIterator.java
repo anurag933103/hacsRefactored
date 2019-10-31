@@ -13,7 +13,7 @@ import java.util.Iterator;
  * @version 3.0
  */
 
-public class CourseIterator implements Iterator
+public class CourseIterator implements Iterator<Course>
 {
   ClassCourseList theCourseList;
   int CurrentCourseNumber=-1;
@@ -36,7 +36,7 @@ public class CourseIterator implements Iterator
       return true;
   }
 
-  public Object next()
+  public Course next()
   {
     if (hasNext()==true)
     {

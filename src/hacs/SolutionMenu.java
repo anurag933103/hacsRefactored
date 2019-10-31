@@ -16,6 +16,7 @@ import java.io.*;
  * @version 3.0
  */
 
+@SuppressWarnings("serial")
 public class SolutionMenu extends JDialog {
 
 	public SolutionMenu() {
