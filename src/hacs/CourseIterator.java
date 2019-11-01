@@ -45,7 +45,7 @@ public class CourseIterator implements Iterator<Course> {
 	}
 
 // the next Course that fits the given CourseName
-	public Object next(String CourseName) {
+	public Course next(String CourseName) {
 		Course theCourse;
 		theCourse = (Course) next();
 		while (theCourse != null) {

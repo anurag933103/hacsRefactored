@@ -41,9 +41,9 @@ public class ReminderVisitor extends NodeVisitor {
 	}
 
 	public void visitCourse(Course course) {
-		Iterator<Assignment> assignmentList = course.assignmentList.listIterator();
+		Iterator<Assignment> assignmentList = course.getAssignmentList().listIterator();
 		while (assignmentList.hasNext()) {
-			Assignment assignment = (Assignment) assignmentList.next();
+			Assignment assignment = assignmentList.next();
 			assignment.accept(this);
 		}
 	}
@@ -57,7 +57,7 @@ public class ReminderVisitor extends NodeVisitor {
 		int nDueDate = calendar.get(Calendar.DAY_OF_YEAR);
 		if (nDueDate <= (ntoday + 1) && nDueDate >= ntoday) /// upcoming
 		{
-			mReminder.listUpcoming.add("today is " + today.toString() + " " + assignment.assignName + " Due Date is "
+			mReminder.listUpcoming.add("today is " + today.toString() + " " + assignment.getAssignName() + " Due Date is "
 					+ assignment.getDueDateString());
 		}
 		if (nDueDate < ntoday) {

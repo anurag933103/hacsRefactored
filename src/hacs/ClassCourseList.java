@@ -23,7 +23,7 @@ public class ClassCourseList extends ArrayList<Course> {
 	String courseFile = "CourseInfo.txt";
 	//// initialize the list by reading from the file.
 	@SuppressWarnings("resource")
-	void initializeFromFile(String theFileName) {
+	public void initializeFromFile() {
 		try {
 			BufferedReader file;
 			String strCourseName = null;
@@ -39,12 +39,12 @@ public class ClassCourseList extends ArrayList<Course> {
 		}
 	}
 
-	Course FindCourseByCourseName(String CourseName) {
+	 public Course findCourseByCourseName(String CourseName) {
 		int nCourseCount = size();
 		for (int i = 0; i < nCourseCount; i++) {
 			Course theCourse;
 			theCourse = (Course) get(i);
-			if (theCourse.courseName.compareTo(CourseName) == 0)
+			if (theCourse.getCourseName().compareTo(CourseName) == 0)
 				return theCourse;
 		}
 		return null;

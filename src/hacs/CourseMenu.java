@@ -99,7 +99,7 @@ abstract public class CourseMenu extends JDialog {
 
 	void refresh() {
 		assignmentCombox.removeAllItems();
-		Iterator<Assignment> Iter = theCourse.assignmentList.iterator();
+		Iterator<Assignment> Iter = theCourse.getAssignmentList().iterator();
 		while (Iter.hasNext()) {
 			assignmentCombox.addItem(Iter.next());
 		}

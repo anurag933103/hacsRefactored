@@ -101,8 +101,8 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 	 * solution for the student. after showing the solution attatch the soluiton;
 	 */
 	public void showMenu(Assignment assignment, Person thePerson) {
-		theAssignment = assignment;
-		SolutionIterator theIter = theAssignment.getSolutionIterator();
+		//this.theAssignment = assignment;
+		SolutionIterator theIter = assignment.getSolutionIterator();
 		theSolution = (Solution) theIter.next(thePerson.userName);
 		if (theSolution == null) {
 			tbSolution.setText("");
@@ -113,7 +113,7 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 
 		}
 
-		lAssignmentName.setText(theAssignment.assignName);
+		lAssignmentName.setText(theAssignment.getAssignName());
 		lDueDate.setText(theAssignment.dueDate.toString());
 		lSuggestedSolution.setText(theAssignment.suggestSolution.solutionFileName);
 

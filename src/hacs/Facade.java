@@ -24,13 +24,15 @@ public class Facade {
 	}
 
 	 public boolean login(UserInfoItem userinfoItem) {
+		boolean check = false; 
 		Login login = new Login();
 		login.setModal(true);
 		login.setVisible(true);
-		;
 		userinfoItem.strUserName = login.getUserName();
 		userinfoItem.userType = login.getUserType();
-		return login.isExit();
+		if (userinfoItem.strUserName ==null)
+			check = true;
+		return check;
 	}
 
 /////////////////////////
@@ -89,10 +91,10 @@ public class Facade {
 		Solution theSolution;
 		SolutionIterator theSolutionIterator;
 		theSolutionIterator = theAssignment.getSolutionIterator();
-		theSolution = (Solution) theSolutionIterator.next();
+		theSolution = theSolutionIterator.next();
 		while (theSolution != null) {
 			theSolution.setReported(true);
-			theSolution = (Solution) theSolutionIterator.next();
+			theSolution = theSolutionIterator.next();
 		}
 	}
 
@@ -121,9 +123,10 @@ public class Facade {
 	 * create a course list and intitialize it with the file CourseInfo.txt
 	 */
 	void createCourseList() {
-		String courseFile = "CourseInfo.txt";
+		//String courseFile = "CourseInfo.txt";
 		theCourseList = new ClassCourseList();
-		theCourseList.initializeFromFile(courseFile);
+		//theCourseList.initializeFromFile(courseFile);
+		theCourseList.initializeFromFile();
 	}
 
 	/*

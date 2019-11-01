@@ -33,6 +33,14 @@ public class Assignment {
 	public void setAssSpec(String theSpec) {
 		this.assignSpec = theSpec;
 	}
+	
+	public String getAssignName() {
+		return assignName;
+	}
+
+	public void setAssignName(String assignName) {
+		this.assignName = assignName;
+	}
 
 	public boolean isOverDue() {
 		Date today = new Date();
@@ -55,9 +63,18 @@ public class Assignment {
 
 	public void submitSolution() {
 	}
-
-	public void getSolutionList() {
+	
+	public SolutionList getTheSolutionList() {
+		return theSolutionList;
 	}
+
+	public void setTheSolutionList(SolutionList theSolutionList) {
+		this.theSolutionList = theSolutionList;
+	}
+
+	/*
+	 * public void getSolutionList() { }
+	 */
 
 	/*
 	 * return the solution of the give name

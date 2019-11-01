@@ -91,7 +91,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 
 	public void showMenu(Assignment assignment, Person person) {
 		theAssignment = assignment;
-		tbAssignmentName.setText(theAssignment.assignName);
+		tbAssignmentName.setText(theAssignment.getAssignName());
 
 		DateFormat theDateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
 		tbDueDate.setText(theDateFormat.format(theAssignment.dueDate));
@@ -136,7 +136,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 		combSolutionList.removeAllItems();
 		SolutionIterator SolIter = new SolutionIterator(theAssignment.theSolutionList);
 		while (SolIter.hasNext()) {
-			theSolution = (Solution) SolIter.next();
+			theSolution = SolIter.next();
 			combSolutionList.addItem(theSolution);
 		}
 	}
