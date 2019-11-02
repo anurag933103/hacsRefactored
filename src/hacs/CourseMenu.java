@@ -18,9 +18,17 @@ import java.util.Iterator;
 
 @SuppressWarnings("serial")
 abstract public class CourseMenu extends JDialog {
-	Course theCourse;
-	boolean bLogout = true;
+	private Course theCourse;
+	
+	public Course getTheCourse() {
+		return theCourse;
+	}
 
+	public void setTheCourse(Course theCourse) {
+		this.theCourse = theCourse;
+	}
+
+	boolean bLogout = true;
 	JRadioButton assignmentRadiao = new JRadioButton();
 	JComboBox<Assignment> assignmentCombox = new JComboBox<Assignment>();
 	JButton assignmentViewButton = new JButton();

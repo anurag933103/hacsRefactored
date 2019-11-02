@@ -26,6 +26,10 @@ public class Assignment {
 	public Assignment() {
 	}
 
+	public Date getDueDate() {
+		return dueDate;
+	}
+	
 	public void setDueDate(Date theDueDate) {
 		this.dueDate = theDueDate;
 	}
@@ -86,6 +90,10 @@ public class Assignment {
 
 	public Solution getSugSolution() {
 		return suggestSolution;
+	}
+
+	public void setSuggestSolution(Solution suggestSolution) {
+		this.suggestSolution = suggestSolution;
 	}
 
 	public SolutionIterator getSolutionIterator() {

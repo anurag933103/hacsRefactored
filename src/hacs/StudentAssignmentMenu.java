@@ -114,8 +114,8 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 		}
 
 		lAssignmentName.setText(theAssignment.getAssignName());
-		lDueDate.setText(theAssignment.dueDate.toString());
-		lSuggestedSolution.setText(theAssignment.suggestSolution.solutionFileName);
+		lDueDate.setText(theAssignment.getDueDate().toString());
+		lSuggestedSolution.setText(theAssignment.getSugSolution().solutionFileName);
 
 		setVisible(true);
 

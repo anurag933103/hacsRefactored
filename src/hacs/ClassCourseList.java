@@ -31,7 +31,6 @@ public class ClassCourseList extends ArrayList<Course> {
 			while ((strCourseName = file.readLine()) != null) {
 				Course theCourse;
 				theCourse = new Course(strCourseName, 0);
-//      theCourse.CourseName= strCourseName;
 				add(theCourse);
 			}
 		} catch (Exception ee) {

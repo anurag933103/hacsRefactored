@@ -56,7 +56,7 @@ abstract public class Person {
 		// create a iterator for the assignment list
 //    Iterator theIter=new ListIterator(CurrentCourse.AssList );
 		Iterator<Assignment> theIter = currentCourse.getAssignmentList().iterator();
-		theCourseMenu.theCourse = currentCourse;
+		theCourseMenu.setTheCourse(currentCourse);
 		Assignment theAssignment;
 		while (theIter.hasNext()) {
 			theAssignment = theIter.next();

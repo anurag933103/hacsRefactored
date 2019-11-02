@@ -94,22 +94,23 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 		tbAssignmentName.setText(theAssignment.getAssignName());
 
 		DateFormat theDateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
-		tbDueDate.setText(theDateFormat.format(theAssignment.dueDate));
-		tbSuggestedSolution.setText(theAssignment.suggestSolution.solutionFileName);
+		tbDueDate.setText(theDateFormat.format(theAssignment.getDueDate()));
+		tbSuggestedSolution.setText(theAssignment.getSugSolution().solutionFileName);
 		refreshSolutionList();
 		setVisible(true);
 		;
 	}
 
 	void buttonCloseActionPerformed(ActionEvent e) {
-		theAssignment.assignName = tbAssignmentName.getText();
+		theAssignment.setAssignName(tbAssignmentName.getText());
 		DateFormat tempDateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
 		try {
-			theAssignment.dueDate = tempDateFormat.parse(tbDueDate.getText());
+			
+			 theAssignment.setDueDate(tempDateFormat.parse(tbDueDate.getText()));
 		} catch (Exception ee) {
 		}
 		;
-		theAssignment.suggestSolution.solutionFileName = tbSuggestedSolution.getText();
+		theAssignment.getSugSolution().solutionFileName = tbSuggestedSolution.getText();
 		setVisible(false);
 		;
 	}
@@ -124,7 +125,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 	}
 
 	void buttonReportActionPerformed(ActionEvent e) {
-		SolutionIterator iter = new SolutionIterator(theAssignment.theSolutionList);
+		SolutionIterator iter = new SolutionIterator(theAssignment.getTheSolutionList());
 		while (iter.hasNext()) {
 			Solution asolution = (Solution) iter.next();
 			asolution.setReported(true);
@@ -134,7 +135,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 
 	private void refreshSolutionList() {
 		combSolutionList.removeAllItems();
-		SolutionIterator SolIter = new SolutionIterator(theAssignment.theSolutionList);
+		SolutionIterator SolIter = new SolutionIterator(theAssignment.getTheSolutionList());
 		while (SolIter.hasNext()) {
 			theSolution = SolIter.next();
 			combSolutionList.addItem(theSolution);
