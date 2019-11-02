@@ -98,7 +98,6 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 		tbSuggestedSolution.setText(theAssignment.getSugSolution().getSolutionFileName());
 		refreshSolutionList();
 		setVisible(true);
-		;
 	}
 
 	void buttonCloseActionPerformed(ActionEvent e) {
@@ -112,7 +111,6 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 		;
 		theAssignment.getSugSolution().setSolutionFileName(tbSuggestedSolution.getText());
 		setVisible(false);
-		;
 	}
 
 	void buttonGradeActionPerformed(ActionEvent e) {

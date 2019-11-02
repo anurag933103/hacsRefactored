@@ -41,7 +41,8 @@ public class CourseIterator implements Iterator<Course> {
 	}
 
 	public void remove() {
-		theCourseList.remove(currentCourseNumber);
+		int size = theCourseList.size();
+		theCourseList.remove(size-1);
 	}
 
 // the next Course that fits the given CourseName

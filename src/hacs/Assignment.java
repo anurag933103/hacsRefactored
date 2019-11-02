@@ -55,18 +55,19 @@ public class Assignment {
 		}
 	}
 
-	public Solution addSolution() {
-		Solution mySolution = new Solution();
-		return mySolution;
-	}
+	/*
+	 * public Solution addSolution() { Solution mySolution = new Solution(); return
+	 * mySolution; }
+	 */
 
 	//// add the theSolution to the Solutionlist
 	public void addSolution(Solution theSolution) {
 		theSolutionList.add(theSolution);
 	}
 
-	public void submitSolution() {
-	}
+	/*
+	 * public void submitSolution() { }
+	 */
 	
 	public SolutionList getTheSolutionList() {
 		return theSolutionList;
@@ -84,8 +85,8 @@ public class Assignment {
 	 * return the solution of the give name
 	 */
 	public Solution getSolution(String studentname) {
-		SolutionIterator Iterator = (SolutionIterator) theSolutionList.iterator();
-		return (Solution) Iterator.next(studentname);
+		SolutionIterator Iterator = new SolutionIterator(theSolutionList);
+		return Iterator.next(studentname);
 	}
 
 	public Solution getSugSolution() {

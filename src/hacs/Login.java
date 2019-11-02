@@ -110,7 +110,6 @@ public class Login extends JDialog {
 			}
 			if (LoginName != null) {
 				this.setVisible(false);
-				;
 			}
 		} catch (Exception ee) {
 			;
@@ -121,7 +120,7 @@ public class Login extends JDialog {
 	/*
 	 * get the user name from aline UserName:Password
 	 */
-	private String getUserName(String aline) {
+	public String getUserName(String aline) {
 		int Sep = aline.lastIndexOf(':');
 		return aline.substring(0, Sep);
 	}
@@ -129,7 +128,7 @@ public class Login extends JDialog {
 	/*
 	 * get the password from aline UserName:Password
 	 */
-	private String getPassword(String aline) {
+	public String getPassword(String aline) {
 		int Sep = aline.lastIndexOf(':');
 		return aline.substring(Sep + 1, aline.length());
 	}

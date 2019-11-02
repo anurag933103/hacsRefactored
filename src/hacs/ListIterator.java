@@ -41,6 +41,7 @@ public class ListIterator implements Iterator<Object> {
 	}
 
 	public void remove() {
-		theList.remove(currentNumber);
+		int size = theList.size();
+		theList.remove(size-1);
 	}
 }

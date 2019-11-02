@@ -67,9 +67,8 @@ public class SolutionIterator implements Iterator<Solution> {
 	}
 
 	public void remove() {
-		/** @todo: Implement this java.util.Iterator method */
-		solutionlist.remove(currentSolutionNumber);
-//    throw new java.lang.UnsupportedOperationException("Method remove() not yet implemented.");
+		int size = solutionlist.size();
+		solutionlist.remove(size-1);
 	}
 
 }

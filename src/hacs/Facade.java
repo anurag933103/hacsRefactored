@@ -123,9 +123,7 @@ public class Facade {
 	 * create a course list and intitialize it with the file CourseInfo.txt
 	 */
 	void createCourseList() {
-		//String courseFile = "CourseInfo.txt";
 		theCourseList = new ClassCourseList();
-		//theCourseList.initializeFromFile(courseFile);
 		theCourseList.initializeFromFile();
 	}
 

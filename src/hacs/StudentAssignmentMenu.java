@@ -22,7 +22,6 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 ////  class AssignmentMenu
 	private boolean boolSubmit = false;
 	private Solution theSolution;
-	private Assignment theAssignment;
 
 	JLabel lAssignmentName = new JLabel();
 	JLabel lDueDate = new JLabel();
@@ -102,6 +101,7 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 	 */
 	public void showMenu(Assignment assignment, Person thePerson) {
 		//this.theAssignment = assignment;
+		if (assignment != null) {
 		SolutionIterator theIter = assignment.getSolutionIterator();
 		theSolution = theIter.next(thePerson.getUserName());
 		if (theSolution == null) {
@@ -113,20 +113,22 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 
 		}
 
-		lAssignmentName.setText(theAssignment.getAssignName());
-		lDueDate.setText(theAssignment.getDueDate().toString());
-		lSuggestedSolution.setText(theAssignment.getSugSolution().getSolutionFileName());
+		lAssignmentName.setText(assignment.getAssignName());
+		lDueDate.setText(assignment.getDueDate().toString());
+		lSuggestedSolution.setText(assignment.getSugSolution().getSolutionFileName());
 
 		setVisible(true);
 
 		if (boolSubmit == true) {
 			if (theSolution == null) {
 				theSolution = new Solution();
-				theAssignment.addSolution(theSolution);
+				assignment.addSolution(theSolution);
 			}
 			theSolution.setTheAuthor(thePerson.userName);
 			theSolution.setSolutionFileName(tbSolution.getText());
 			theSolution.theSubmitData = new Date();
+		
+		  }
 		}
 	}
 
