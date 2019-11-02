@@ -14,11 +14,11 @@ import java.util.*;
  */
 
 public class Solution {
-	String theAuthor = "";
-	String solutionFileName = "";
+	protected String theAuthor = "";
+	protected String solutionFileName = "";
 	Date theSubmitData = new Date();
-	int theGrade;
-	boolean reported = false;
+	protected int theGrade;
+	protected boolean reported = false;
 
 	public Solution() {
 	}
@@ -33,6 +33,30 @@ public class Solution {
 			string += "not reported";
 
 		return (string);
+	}
+
+	public String getTheAuthor() {
+		return theAuthor;
+	}
+
+	public void setTheAuthor(String theAuthor) {
+		this.theAuthor = theAuthor;
+	}
+
+	public String getSolutionFileName() {
+		return solutionFileName;
+	}
+
+	public void setSolutionFileName(String solutionFileName) {
+		this.solutionFileName = solutionFileName;
+	}
+
+	public int getTheGrade() {
+		return theGrade;
+	}
+
+	public void setTheGrade(int theGrade) {
+		this.theGrade = theGrade;
 	}
 
 	String getGradeString() {

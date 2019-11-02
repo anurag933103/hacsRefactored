@@ -54,11 +54,11 @@ public class SolutionIterator implements Iterator<Solution> {
 	}
 
 	/// get the next Solution that fits the Username;
-	public Object next(String UserName) {
+	public Solution next(String UserName) {
 		Solution theSolution;
 		theSolution = (Solution) next();
 		while (theSolution != null) {
-			if (UserName.compareTo(theSolution.theAuthor) == 0) {
+			if (UserName.compareTo(theSolution.getTheAuthor()) == 0) {
 				return theSolution;
 			}
 			theSolution = (Solution) next();

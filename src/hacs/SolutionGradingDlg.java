@@ -55,12 +55,12 @@ public class SolutionGradingDlg extends JDialog {
 	void show(Solution solution) {
 		theSolution = solution;
 		tfGrad.setText("" + theSolution.getGradeInt());
-		labelSolutionFileName.setText(theSolution.solutionFileName);
+		labelSolutionFileName.setText(theSolution.getSolutionFileName());
 		setVisible(true);
 	}
 
 	void buttonOkActionPerformed(ActionEvent e) {
-		theSolution.theGrade = Integer.parseInt(tfGrad.getText());
+		theSolution.setTheGrade(Integer.parseInt(tfGrad.getText()));
 		setVisible(false);
 	}
 

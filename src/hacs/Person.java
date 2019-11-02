@@ -14,7 +14,7 @@ import java.util.*;
  */
 
 abstract public class Person {
-	int type = 0; // type=0 : student, type=1 instructor
+	protected int type = 0; // type=0 : student, type=1 instructor
 	String userName;
 	ClassCourseList courseList;
 	CourseMenu theCourseMenu;
@@ -71,5 +71,41 @@ abstract public class Person {
 
 	public void addCourse(Course theCourse) {
 		courseList.add(theCourse);
+	}
+	
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public CourseMenu getTheCourseMenu() {
+		return theCourseMenu;
+	}
+
+	public void setTheCourseMenu(CourseMenu theCourseMenu) {
+		this.theCourseMenu = theCourseMenu;
+	}
+
+	public Course getCurrentCourse() {
+		return currentCourse;
+	}
+
+	public void setCurrentCourse(Course currentCourse) {
+		this.currentCourse = currentCourse;
+	}
+
+	public void setCourseList(ClassCourseList courseList) {
+		this.courseList = courseList;
 	}
 }

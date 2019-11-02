@@ -22,7 +22,7 @@ public class Instructor extends Person {
 			theCourseMenu = new HighLevelCourseMenu();
 		} else/// 1: LowLevel
 		{
-			theCourseMenu = new HighLevelCourseMenu();
+			theCourseMenu = new LowLevelCourseMenu();
 		}
 		return theCourseMenu;
 	}

@@ -28,8 +28,8 @@ public class Facade {
 		Login login = new Login();
 		login.setModal(true);
 		login.setVisible(true);
-		userinfoItem.strUserName = login.getUserName();
-		userinfoItem.userType = login.getUserType();
+		userinfoItem.setStrUserName(login.getUserName());
+		userinfoItem.setUserType(login.getUserType());
 		if (userinfoItem.strUserName ==null)
 			check = true;
 		return check;
@@ -47,7 +47,7 @@ public class Facade {
 
 	void addAssignment(Course theCourse) {
 		AssignmentMenu theAssignmentMenu;
-		if (thePerson.type == 0)/// student
+		if (thePerson.getType() == 0)/// student
 		{
 			theAssignmentMenu = new StudentAssignmentMenu();
 		} else {
@@ -67,7 +67,7 @@ public class Facade {
 	 */
 	void viewAssignment(Assignment theAssignment) {
 		AssignmentMenu theAssignmentMenu;
-		if (thePerson.type == 0)/// student
+		if (thePerson.getType() == 0)/// student
 		{
 			theAssignmentMenu = new StudentAssignmentMenu();
 		} else {
@@ -109,14 +109,14 @@ public class Facade {
 	}
 
 	void createUser(UserInfoItem userinfoitem) {
-		if (userinfoitem.userType == UserInfoItem.UserType.STUDENT) /// student
+		if (userinfoitem.getUserType() == UserInfoItem.UserType.STUDENT) /// student
 		{
 			thePerson = new Student();
 		} else /// instructor
 		{
 			thePerson = new Instructor();
 		}
-		thePerson.userName = userinfoitem.strUserName;
+		thePerson.setUserName(userinfoitem.getStrUserName());
 	}
 
 	/*
@@ -144,7 +144,7 @@ public class Facade {
 			{
 				strUserName = getUserName(aline);
 				strCourseName = getCourseName(aline);
-				if (strUserName.compareTo(thePerson.userName) == 0) /// the UserName mateches
+				if (strUserName.compareTo(thePerson.getUserName()) == 0) /// the UserName mateches
 				{
 					theSelecteCourse = findCourseByCourseName(strCourseName);
 					if (theSelecteCourse != null) /// Find the Course in the CourseList--->attach
@@ -182,8 +182,8 @@ public class Facade {
 	 */
 	public boolean selectCourse() {
 		CourseSelectDlg theDlg = new CourseSelectDlg();
-		theSelecteCourse = theDlg.showDlg(thePerson.courseList);
-		thePerson.currentCourse = theSelecteCourse;
+		theSelecteCourse = theDlg.showDlg(thePerson.getCourseList());
+		thePerson.setCurrentCourse(theSelecteCourse);
 		nCourseLevel = theDlg.nCourseLevel;
 		return theDlg.isLogout();
 	}

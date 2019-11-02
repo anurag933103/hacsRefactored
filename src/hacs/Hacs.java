@@ -19,8 +19,6 @@ public class Hacs {
 	}
 
 	public static void main(String[] args) {
-//		String strUsername;
-//		String strUserType = null;
 		UserInfoItem userinfoitem = new UserInfoItem();
 		theFacade.createCourseList();
 		while (true) {
@@ -28,11 +26,9 @@ public class Hacs {
 			bExit = theFacade.login(userinfoitem);
 			if (bExit)
 				break;
-			// userinfoitem.strUserName = "Inst1";
-			// userinfoitem.UserType = 1;
 			theFacade.createUser(userinfoitem);
 			theFacade.attachCourseToUser();
-			if (userinfoitem.userType == UserInfoItem.UserType.STUDENT) // if is a student remind him of the due date
+			if (userinfoitem.getUserType() == UserInfoItem.UserType.STUDENT) // if is a student remind him of the due date
 				theFacade.remind();
 			boolean bLogout = false;
 			while (!bLogout) {
