@@ -17,5 +17,17 @@ public class SolutionTest {
 		String statement = soln.toString();
 		assertEquals(statement,"Anurag  quiz Grade=1  not reported");
 	}
+	
+	@Test
+	public void testSolutionValuePostReporting() {
+		
+		Solution soln = new Solution();
+		soln.setTheAuthor("Anurag");
+		soln.setSolutionFileName("quiz");
+	    soln.setTheGrade(1);
+	    soln.setReported(true);
+		String statement = soln.toString();
+		assertEquals(statement,"Anurag  quiz Grade=1  reported");
+	}
 
 }

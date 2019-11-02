@@ -33,8 +33,8 @@ public class SolutionIterator implements Iterator<Solution> {
 	}
 
 	public boolean hasNext() {
-		/** @todo: Implement this java.util.Iterator method */
-		if (currentSolutionNumber >= solutionlist.size() - 1)
+		int size = solutionlist.size();
+		if (currentSolutionNumber >= size - 1)
 			return false;
 		else
 			return true;
@@ -42,7 +42,6 @@ public class SolutionIterator implements Iterator<Solution> {
 	}
 
 	public Solution next() {
-		/** @todo: Implement this java.util.Iterator method */
 		if (hasNext() == true) {
 			currentSolutionNumber++;
 			return solutionlist.get(currentSolutionNumber);

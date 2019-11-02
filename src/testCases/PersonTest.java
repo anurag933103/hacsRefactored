@@ -76,18 +76,5 @@ public class PersonTest {
 		assertTrue(stud.showMenu());
 	}
 	
-	/*
-	 * @Test public void testInstructorHighMenu() {
-	 * 
-	 * Person stud = new Instructor(); Course course = new Course("CSE870",0);
-	 * Assignment assign = new Assignment(); assign.setAssignName("abc");
-	 * ArrayList<Assignment> assignList = new ArrayList<Assignment>(); CourseMenu
-	 * menu = new HighLevelCourseMenu(); course.setAssignmentList(assignList);
-	 * stud.setCurrentCourse(course); stud.setTheCourseMenu(menu);
-	 * assertTrue(stud.showMenu()); }
-	 */
-	
-	
-
 
 }
